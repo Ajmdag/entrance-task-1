@@ -1,11 +1,11 @@
-const faker = require('faker');
+import { faker } from 'faker';
 
-function rand() {
+const rand = () => {
   const rnd = Math.random() - 0.5;
   return Math.sign(rnd) * Math.sqrt(Math.abs(rnd)) * 1.4;
 }
 
-function generateChartData(isActive) {
+const generateChartData = isActive => {
   const TOTAL_COUNT = 14;
   const emptyCount = isActive ? 0 : Math.floor(Math.random() * 5);
   const count = TOTAL_COUNT - emptyCount;
@@ -15,7 +15,7 @@ function generateChartData(isActive) {
     .map((el, i) => (i < count ? Math.floor(Math.random() * 7) + 2 : 0));
 }
 
-exports.generateData = function() {
+const generateData = () => {
   const data = [];
 
   for (let i = 0; i < 721; i++) {
@@ -30,7 +30,7 @@ exports.generateData = function() {
   return data;
 };
 
-exports.generateDetails = function({ isActive }) {
+const generateDetails = ({ isActive }) => {
   const connections = isActive ? Math.floor(Math.random() * 7) + 4 : 0;
 
   return {
@@ -38,3 +38,6 @@ exports.generateDetails = function({ isActive }) {
     chart: generateChartData(isActive).concat(connections)
   };
 };
+
+export { generateData };
+export { generateDetails };

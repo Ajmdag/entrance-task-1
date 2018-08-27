@@ -1,6 +1,6 @@
 import { createChart } from './chart';
 
-export function getDetailsContentLayout(ymaps) {
+const  getDetailsContentLayout = ymaps => {
   const BalloonContentLayout = ymaps.templateLayoutFactory.createClass(
     `<div class="details-info">
         {% if (properties.details) %}
@@ -55,3 +55,5 @@ export function getDetailsContentLayout(ymaps) {
 
   return BalloonContentLayout;
 }
+
+export { getDetailsContentLayout };

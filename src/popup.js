@@ -1,4 +1,4 @@
-function getTableRowHtml(obj) {
+const getTableRowHtml = obj => {
     return `
         <tr>
             <td>${obj.id}</td>
@@ -7,7 +7,7 @@ function getTableRowHtml(obj) {
     `;
 }
 
-export function getPopupContent(obj) {
+const getPopupContent = obj => {
 
     const htmlStatus = obj.isActive
         ? `<div class="station-info-active">active</div>`
@@ -44,3 +44,5 @@ export function getPopupContent(obj) {
 
     return content;
 }
+
+export { getPopupContent };

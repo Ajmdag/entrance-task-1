@@ -2,7 +2,7 @@ import { loadList, loadDetails } from './api';
 import { getDetailsContentLayout } from './details';
 import { createFilterControl } from './filter';
 
-export function initMap(ymaps, containerId) {
+const initMap = (ymaps, containerId) => {
   const myMap = new ymaps.Map(containerId, {
     center: [55.76, 37.64],
     controls: [],
@@ -51,3 +51,5 @@ export function initMap(ymaps, containerId) {
     );
   });
 }
+
+export { initMap };

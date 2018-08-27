@@ -1,12 +1,12 @@
 import { Chart } from 'chart.js';
 
-function getColor(isActive, alpha = 1) {
+const getColor = (isActive, alpha = 1) => {
   return isActive
     ? `rgba(54, 162, 235, ${alpha})`
     : `rgba(255, 99, 132, ${alpha})`;
 }
 
-function getLabel(el, i, data) {
+const getLabel = (el, i, data) => {
   const x = new Date();
   x.setHours(x.getHours() - data.length + i);
   x.setMinutes(0);
@@ -15,7 +15,7 @@ function getLabel(el, i, data) {
   return x.toString();
 }
 
-export function createChart(container, data, isActive) {
+const createChart = (container, data, isActive) => {
   const ctx = container.getContext('2d');
 
   const borderColor = getColor(isActive);
@@ -47,3 +47,5 @@ export function createChart(container, data, isActive) {
 
   return chart;
 }
+
+export { createChart };

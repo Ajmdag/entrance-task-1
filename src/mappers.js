@@ -1,4 +1,4 @@
-export function mapServerData(serverData) {
+const mapServerData = (serverData) => {
   return {
     type: "FeatureCollection",
     features: serverData.map((obj, index) => ({
@@ -20,7 +20,9 @@ export function mapServerData(serverData) {
   };
 }
 
-function getObjectPreset(obj) {
+export { mapServerData };
+
+const getObjectPreset = obj => {
   return obj.isActive
     ? 'islands#blueCircleDotIconWithCaption'
     : 'islands#redCircleDotIconWithCaption';

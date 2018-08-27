@@ -1,9 +1,9 @@
-const { generateData, generateDetails } = require('./generate-data');
+import { generateData, generateDetails } from './generate-data';
 
 const data = generateData();
 const cache = {};
 
-exports.initBackendStub = function(app) {
+const initBackendStub = app => {
   app.get('/api/stations', (req, res) => {
     res.json(data);
   });
@@ -18,3 +18,5 @@ exports.initBackendStub = function(app) {
     return {};
   });
 };
+
+export { initBackendStub };
