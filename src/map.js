@@ -9,6 +9,13 @@ const initMap = (ymaps, containerId) => {
     zoom: 10
   });
 
+  var myPlacemark = new ymaps.Placemark([55.76, 37.64], {
+    hintContent: 'Содержимое всплывающей подсказки',
+    balloonContent: 'Содержимое балуна'
+  });
+
+  myMap.geoObjects.add(myPlacemark);
+
   const objectManager = new ymaps.ObjectManager({
     clusterize: true,
     gridSize: 64,
