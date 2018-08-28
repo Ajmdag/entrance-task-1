@@ -14,8 +14,7 @@ const initMap = (ymaps, containerId) => {
     balloonContent: 'Содержимое балуна'
   });
 
-  myMap.geoObjects.add(myPlacemark);
-
+  
   const objectManager = new ymaps.ObjectManager({
     clusterize: true,
     gridSize: 64,
@@ -26,7 +25,9 @@ const initMap = (ymaps, containerId) => {
     geoObjectBalloonContentLayout: getDetailsContentLayout(ymaps)
   });
 
-  objectManager.clusters.options.set('preset', 'islands#greenClusterIcons');
+  myMap.geoObjects.add(objectManager);
+
+  objectManager.clusters.options.set('preset');
 
   loadList().then(data => {
     objectManager.add(data);
